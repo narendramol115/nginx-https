@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+### NGINX ###
+
+  nginx:
+    image: nginx:1.0
+    #entrypoint: /usr/sbin/nginx
+    #  command: ['-g', 'daemon off;', '-c', '/etc/nginx/conf.d/http.conf']
+    #network_mode: host
+    #restart: always
+    #environment:
+    #  TZ: "Asia/Calcutta"
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/stack/narendra/nginx:/etc/nginx/conf.d
+      - /home/stack/narendra/nginx:/etc/nginx/ssl
